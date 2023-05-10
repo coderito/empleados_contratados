@@ -1,4 +1,5 @@
-import {BiUserPlus} from 'react-icons/bi'
+import { BiUserPlus } from 'react-icons/bi'
+import Table from '../../components/table';
 
 export default function Home() {
   return (
@@ -13,6 +14,9 @@ export default function Home() {
               Agregar empleado  <BiUserPlus  className='text-md ml-1'/>
             </button>
           </div>
+        </div>
+        <div className='container mx-auto'>
+          <Table />
         </div>
       </main>
     </div>
