@@ -1,139 +1,73 @@
-import { BiEdit, BiTrash } from "react-icons/bi"
+import { BiEdit, BiTrash } from "react-icons/bi";
+import data from "../database/data.json";
 
 export default function Table() {
+  function ScopeTableRowItem({ id, name, email, status, salary, date }) {
+    return (
+      <tr class="border-b border-gray-200 dark:border-gray-700">
+        <th
+          scope="row"
+          class="px-6 py-4 font-bold text-xl text-gray-900 whitespace-nowrap bg-gray-50 dark:text-white dark:bg-gray-800"
+        >
+          {name || "Unknown"}
+        </th>
+        <td class="px-6 py-4">{email || "Unknown"}</td>
+        <td class="px-6 py-4 bg-gray-50 dark:bg-gray-800">
+          {date || "Unknown"}
+        </td>
+        <td class="px-6 py-4">
+          {status === "Active" ? (
+            <button className="bg-green-400 text-white px-3 py-1 rounded-sm">
+              {status || "Unknown"}
+            </button>
+          ) : (
+            <button className="bg-red-400 text-white px-3 py-1 rounded-sm">
+              {status || "Unknown"}
+            </button>
+          )}
+        </td>
+        <td class="px-6 py-4 bg-gray-50 dark:bg-gray-800">
+          {salary || "Unknown"}
+        </td>
+        <td class="px-6 py-4 flex justify-around">
+          <BiEdit size={25} className="text-green-600" />
+          <BiTrash size={25} className="text-red-600" />
+        </td>
+      </tr>
+    );
+  }
+
   return (
     <div class="relative overflow-x-auto shadow-md sm:rounded-lg">
-    <table class="w-full text-sm text-left text-gray-500 dark:text-gray-400">
+      <table class="w-full text-sm text-left text-gray-500 dark:text-gray-400">
         <thead class="text-xs text-gray-700 uppercase dark:text-gray-400">
-            <tr className='bg-black text-white'>
-                <th scope="col" class="px-6 py-3 ">
-                    Nombre
-                </th>
-                <th scope="col" class="px-6 py-3">
-                    Email
-                </th>
-                <th scope="col" class="px-6 py-3">
-                    Fecha de Ingreso
-                </th>
-                <th scope="col" class="px-6 py-3">
-                    Estado
-                </th>
-                <th scope="col" class="px-6 py-3">
-                    Sueldo
-                </th>
-                <th scope="col" class="px-6 py-3">
-                    Acciones
-                </th>
-            </tr>
+          <tr className="bg-black text-white">
+            <th scope="col" class="px-6 py-3 ">
+              Nombre
+            </th>
+            <th scope="col" class="px-6 py-3">
+              Email
+            </th>
+            <th scope="col" class="px-6 py-3">
+              Fecha de Ingreso
+            </th>
+            <th scope="col" class="px-6 py-3">
+              Estado
+            </th>
+            <th scope="col" class="px-6 py-3">
+              Sueldo
+            </th>
+            <th scope="col" class="px-6 py-3">
+              Acciones
+            </th>
+          </tr>
         </thead>
         <tbody>
-            <tr class="border-b border-gray-200 dark:border-gray-700">
-                <th scope="row" class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap bg-gray-50 dark:text-white dark:bg-gray-800">
-                    Apple MacBook Pro 17"
-                </th>
-                <td class="px-6 py-4">
-                    Silver
-                </td>
-                <td class="px-6 py-4 bg-gray-50 dark:bg-gray-800">
-                    Laptop
-                </td>
-                <td class="px-6 py-4">
-                    $2999
-                </td>
-                <td class="px-6 py-4 bg-gray-50 dark:bg-gray-800">
-                    $2999
-                </td>
-                 <td class="px-6 py-4 flex justify-around">
-                    <BiEdit size={25} className='text-green-600'/>
-                    <BiTrash size={25} className='text-red-600'/>
-                </td>
-            </tr>
-            <tr class="border-b border-gray-200 dark:border-gray-700">
-                <th scope="row" class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap bg-gray-50 dark:text-white dark:bg-gray-800">
-                    Microsoft Surface Pro
-                </th>
-                <td class="px-6 py-4">
-                    White
-                </td>
-                <td class="px-6 py-4 bg-gray-50 dark:bg-gray-800">
-                    Laptop PC
-                </td>
-                <td class="px-6 py-4">
-                    <button className="bg-green-400 text-white px-3 py-1 rounded-sm">Contratado</button>
-                </td>
-                <td class="px-6 py-4 bg-gray-50 dark:bg-gray-800">
-                    $2999
-                </td>
-                <td class="px-6 py-4 flex justify-around">
-                    <BiEdit size={25} className='text-green-600'/>
-                    <BiTrash size={25} className='text-red-600'/>
-                </td>
-            </tr>
-            <tr class="border-b border-gray-200 dark:border-gray-700">
-                <th scope="row" class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap bg-gray-50 dark:text-white dark:bg-gray-800">
-                    Magic Mouse 2
-                </th>
-                <td class="px-6 py-4">
-                    Black
-                </td>
-                <td class="px-6 py-4 bg-gray-50 dark:bg-gray-800">
-                    Accessories
-                </td>
-                <td class="px-6 py-4">
-                    $99
-                </td>
-                <td class="px-6 py-4 bg-gray-50 dark:bg-gray-800">
-                    $2999
-                </td>
-                <td class="px-6 py-4 flex justify-around">
-                    <BiEdit size={25} className='text-green-600'/>
-                    <BiTrash size={25} className='text-red-600'/>
-                </td>
-            </tr>
-            <tr class="border-b border-gray-200 dark:border-gray-700">
-                <th scope="row" class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap bg-gray-50 dark:text-white dark:bg-gray-800">
-                    Google Pixel Phone
-                </th>
-                <td class="px-6 py-4">
-                    Gray
-                </td>
-                <td class="px-6 py-4 bg-gray-50 dark:bg-gray-800">
-                    Phone
-                </td>
-                <td class="px-6 py-4">
-                    $799
-                </td>
-                <td class="px-6 py-4 bg-gray-50 dark:bg-gray-800">
-                    $2999
-                </td>
-                <td class="px-6 py-4 flex justify-around">
-                    <BiEdit size={25} className='text-green-600'/>
-                    <BiTrash size={25} className='text-red-600'/>
-                </td>
-            </tr>
-            <tr>
-                <th scope="row" class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap bg-gray-50 dark:text-white dark:bg-gray-800">
-                    Apple Watch 5
-                </th>
-                <td class="px-6 py-4">
-                    Red
-                </td>
-                <td class="px-6 py-4 bg-gray-50 dark:bg-gray-800">
-                    Wearables
-                </td>
-                <td class="px-6 py-4">
-                    $999
-                </td>
-                <td class="px-6 py-4 bg-gray-50 dark:bg-gray-800">
-                    $2999
-                </td>
-                <td class="px-6 py-4 flex justify-around">
-                    <BiEdit size={25} className='text-green-600'/>
-                    <BiTrash size={25} className='text-red-600'/>
-                </td>
-            </tr>
+          {data.map((item, index) => (
+            <ScopeTableRowItem {...item} key={index} />
+          ))}
         </tbody>
-    </table>
-</div>
-  )
+      </table>
+    </div>
+  );
 }
