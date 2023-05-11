@@ -1,0 +1,42 @@
+[
+    {
+        "id": 1,
+        "name": "Juan Eulufi",
+        "email": "juan.eulufi.sa@gmail.com",
+        "salary": "2500",
+        "date": "2022-06-08",
+        "status": "Active"
+    },
+    {
+        "id": 2,
+        "name": "Nico Eulufi",
+        "email": "nico.eulufi.sa@gmail.com",
+        "salary": "2500",
+        "date": "2022-06-08",
+        "status": "Active"
+    },
+    {
+        "id": 3,
+        "name": "Seba Eulufi",
+        "email": "seba.eulufi.sa@gmail.com",
+        "salary": "2500",
+        "date": "2022-06-08",
+        "status": "Inactive"
+    },
+    {
+        "id": 4,
+        "name": "Alfredo Eulufi",
+        "email": "alfredo.eulufi.sa@gmail.com",
+        "salary": "2500",
+        "date": "2022-06-08",
+        "status": "Active"
+    },
+    {
+        "id": 5,
+        "name": "David Eulufi",
+        "email": "david.eulufi.sa@gmail.com",
+        "salary": "2500",
+        "date": "2022-06-08",
+        "status": "Inactive"
+    }
+]
