@@ -1,27 +1,29 @@
-import connectMongoDB from "../../../database/conn"
+import connectMongoDB from '../../../database/conn';
+import { getUsers, postUser } from '../../../database/controller';
 
+export default async function handler(req, res) {
+    connectMongoDB().catch(() => res.status(405).json({ error: "Error in the Connection"}))
 
-export default async function handler (req, res){
-    connectMongoDB().catch(() => res.status(405).json({error: "Error in the connection"}))
-
-    const {method} = req
+    // type of request
+    const { method } = req
 
     switch(method){
-        case 'GET':
-            res.status(200).json({method, name: 'GET REQUEST'});
-            break
+        case 'GET' :
+            getUsers(req, res)
+            break;
         case 'POST':
-            res.status(200).json({method, name: 'POST REQUEST'});
-            break
+            postUser(req, res)
+            break;
         case 'PUT':
-            res.status(200).json({method, name: 'PUT REQUEST'});
-            break
+            res.status(200).json({ method, name: 'PUT Request' });
+            break;
         case 'DELETE':
-            res.status(200).json({method, name: 'DELETE REQUEST'}); 
-            break
-        default:
-            res.setHeader('Allow', ['GET', 'POST', 'PUT', ' DELETE'])
-            res.status(405).end('Methodno not allowd')
-            break
+            res.status(200).json({ method, name: 'DELETE Request' });
+            break;
+        default : 
+            res.setHeader('Allow', ['GET', 'POST', 'PUT', 'DELETE']);
+            res.status(405).end(`Method ${method} Not Allowd`)
+            break;
     }
-}
+  }
+  
