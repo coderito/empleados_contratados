@@ -76,8 +76,8 @@ export default function UpdateUserForm() {
           />
         </div>
         <div className="flex items-center gap-10">
-          <div class="flex">
-            <div class="flex items-center h-5">
+          <div className="flex">
+            <div className="flex items-center h-5">
               <input
                 id="helper-radio"
                 aria-describedby="helper-radio-text"
@@ -85,23 +85,23 @@ export default function UpdateUserForm() {
                 type="radio"
                 name="status"
                 value="Active"
-                class="w-4 h-4 cursor-pointer text-green-600 bg-gray-100 border-gray-300  ring-inset focus:ring-green-500"
+                className="w-4 h-4 cursor-pointer text-green-600 bg-gray-100 border-gray-300  ring-inset focus:ring-green-500"
               />
             </div>
-            <div class="ml-2 text-sm">
-              <label for="helper-radio" class="text-gray-900">
+            <div className="ml-2 text-sm">
+              <label for="helper-radio" className="text-gray-900">
                 Contratar
               </label>
               <p
                 id="helper-radio-text"
-                class="text-xs font-normal text-gray-500"
+                className="text-xs font-normal text-gray-500"
               >
                 Hacer contratos o contratas de un trabajo.
               </p>
             </div>
           </div>
-          <div class="flex">
-            <div class="flex items-center h-5">
+          <div className="flex">
+            <div className="flex items-center h-5">
               <input
                 id="helper-radio"
                 onChange={setFormData}
@@ -109,16 +109,16 @@ export default function UpdateUserForm() {
                 type="radio"
                 value="Inactive"
                 name="status"
-                class="w-4 h-4 text-green-600 cursor-pointer bg-gray-100 border-gray-300  ring-inset focus:ring-green-500"
+                className="w-4 h-4 text-green-600 cursor-pointer bg-gray-100 border-gray-300  ring-inset focus:ring-green-500"
               />
             </div>
-            <div class="ml-2 text-sm">
-              <label for="helper-radio" class="text-gray-900">
+            <div className="ml-2 text-sm">
+              <label for="helper-radio" className="text-gray-900">
                 Rescindir
               </label>
               <p
                 id="helper-radio-text"
-                class="text-xs font-normal text-gray-500"
+                className="text-xs font-normal text-gray-500"
               >
                 Dejar sin efecto un contrato u otra obligación legal.
               </p>
