@@ -92,7 +92,7 @@ export default function AddUserForm() {
             </div>
             <div className="ml-2 text-sm">
               <label
-                for="helper-radio"
+                htmlFor="helper-radio"
                 className="text-gray-900"
               >
                 Contratar
@@ -119,7 +119,7 @@ export default function AddUserForm() {
             </div>
             <div className="ml-2 text-sm">
               <label
-                for="helper-radio"
+                htmlFor="helper-radio"
                 className="text-gray-900"
               >
                 Rescindir
