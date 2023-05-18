@@ -1,6 +1,8 @@
 import { BiEdit, BiTrash } from "react-icons/bi";
 import { getUsers } from "../lib/helpers";
 import { useQuery } from "react-query";
+import { useDispatch, useSelector } from "react-redux";
+import { toggleChangeAction } from "../redux/reducer";
 
 export default function Table() {
 
@@ -11,6 +13,14 @@ export default function Table() {
   if(isError) return <>Error {error}</>
 
   function ScopeTableRowItem({ id, name, email, status, salary, date }) {
+    const visible = useSelector(state => state.app.client.toggleForm)
+    const dispatch = useDispatch()
+
+    const onUpdate = () => {
+      dispatch(toggleChangeAction())
+      console.log(visible)
+    }
+
     return (
       <tr className="border-b border-gray-200 dark:border-gray-700">
         <th
@@ -38,7 +48,7 @@ export default function Table() {
           {salary || "Unknown"}
         </td>
         <td className="px-6 py-4 flex justify-around">
-          <BiEdit size={25} className="text-green-600" />
+          <BiEdit size={25} className="text-green-600" onClick={() => onUpdate()}/>
           <BiTrash size={25} className="text-red-600" />
         </td>
       </tr>
